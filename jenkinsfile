@@ -9,6 +9,8 @@ pipeline {
   stages {
     stage('Build') {
       steps {
+        env.JAVA_HOME="${tool '11.0.12'}"
+        env.PATH="${env.JAVA_HOME}/bin:${env.PATH}"
         echo "$PATH"
         bat 'java --version'
         bat 'mvn clean compile'
