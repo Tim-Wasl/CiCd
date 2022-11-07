@@ -8,12 +8,12 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'mvn clean compile'
+        bat 'mvn clean compile'
       }
     }
     stage('Quality Check') {
       steps {
-        sh 'mvn verify'
+        bat 'mvn verify'
       }
     }
   }
