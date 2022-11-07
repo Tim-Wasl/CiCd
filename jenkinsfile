@@ -9,6 +9,8 @@ pipeline {
   stages {
     stage('Build') {
       steps {
+        echo "$PATH"
+        bat 'java --version'
         bat 'mvn clean compile'
       }
     }
