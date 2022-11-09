@@ -26,6 +26,7 @@ pipeline {
     }
     steps {
         withSonarQubeEnv('qube') {
+            bat "./gradlew build sonarqube -Dsonar.projectKey=test"
             bat "${scannerHome}/bin/sonar-scanner"
         }
         timeout(time: 10, unit: 'MINUTES') {
