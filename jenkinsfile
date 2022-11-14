@@ -19,6 +19,7 @@ pipeline {
       steps {
         bat './gradlew build'
         recordIssues(
+          
         enabledForFailure: true, aggregatingResults: true, 
         tools: [checkStyle(pattern: 'build/reports/checkstyle/main.xml')]
         )
