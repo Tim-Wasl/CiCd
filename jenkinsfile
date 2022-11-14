@@ -18,6 +18,10 @@ pipeline {
     stage('Quality Check') {
       steps {
         bat './gradlew build'
+        recordIssues(
+        enabledForFailure: true, aggregatingResults: true, 
+        tools: [checkStyle(pattern: 'target/checkstyle-result.xml')]
+        )
       }
     }
     stage('Sonarqube') {
