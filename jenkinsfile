@@ -20,7 +20,7 @@ pipeline {
         bat './gradlew build'
         recordIssues(
         enabledForFailure: true, aggregatingResults: true, 
-        tools: [checkStyle(pattern: 'target/checkstyle-result.xml')]
+        tools: [checkStyle(pattern: 'build/reports/checkstyle/main.xml')]
         )
       }
     }

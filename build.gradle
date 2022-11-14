@@ -3,6 +3,7 @@ plugins {
 	id 'io.spring.dependency-management' version '1.0.15.RELEASE'
 	id 'java'
 	id "org.sonarqube" version "3.4.0.2513"
+	id 'checkstyle'
 }
 
 group = 'com.example'
@@ -31,3 +32,9 @@ dependencies {
 tasks.named('test') {
 	useJUnitPlatform()
 }
+
+  checkstyle {
+      ignoreFailures = true
+      configFile = rootProject.file('config/checkstyle.xml')
+      toolVersion = '8.4'
+  }
