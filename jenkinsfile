@@ -10,11 +10,11 @@ pipeline {
   }
 
   stages {
-    stage('Build') {
-      steps {
-        bat "./gradlew bootrun"
-      }
-    }
+    // stage('Build') {
+    //   steps {
+    //     bat "./gradlew bootrun"
+    //   }
+    // }
     stage('Quality Check') {
       steps {
         bat './gradlew build'
