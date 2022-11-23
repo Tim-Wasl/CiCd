@@ -4,6 +4,7 @@ plugins {
 	id 'java'
 	id "org.sonarqube" version "3.4.0.2513"
 	id 'checkstyle'
+	id 'jacoco'
 }
 
 group = 'com.example'
@@ -32,6 +33,16 @@ dependencies {
 tasks.named('test') {
 	useJUnitPlatform()
 }
+
+jacocoTestReport{ 
+		dependsOn test //tests are required to run before generating the report    
+			reports{ 
+		    	xml.enabled true
+				csv.enabled false
+				html.enabled true
+				html.destination layout.buildDirectory.dir('jacocoHtml').get().asFile  
+			}
+	}
 
   checkstyle {
       ignoreFailures = true

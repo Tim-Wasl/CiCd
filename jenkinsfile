@@ -29,6 +29,7 @@ pipeline {
     }
     steps {
         withSonarQubeEnv('qube') {
+            bat "./gradlew test jacocoTestReport"
             bat "./gradlew build sonarqube -Dsonar.projectKey=test"
         }
     }
