@@ -48,7 +48,6 @@ pipeline {
                 }
             }
         }
-  }
 
   stage("Pack") {
       steps{
@@ -66,4 +65,5 @@ pipeline {
         }
       }
     }
+  }
 }
