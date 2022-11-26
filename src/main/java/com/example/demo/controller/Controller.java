@@ -12,7 +12,7 @@ public class Controller {
     private transient String b;
     
 
-    @GetMapping(path = "/")
+    @GetMapping(path = "/test")
     public String hello() {
         return "Hello";
     }

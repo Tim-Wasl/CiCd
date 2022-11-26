@@ -21,7 +21,7 @@ class ControllerTest {
 
     @Test
     void testHello() throws Exception {
-        this.mvc.perform(get("/")).andExpect(status().isOk());
+        this.mvc.perform(get("/test")).andExpect(status().isOk());
     }
     
 }
