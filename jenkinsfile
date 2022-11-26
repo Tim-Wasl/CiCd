@@ -3,6 +3,9 @@ pipeline {
 
   environment {
     JAVA_HOME = 'C:/Users/wasl/jdk11'
+    registry = "timcicd/repository"
+    registryCredential = 'dockerhub'
+    dockerImage = ''
  } 
 
   tools {
@@ -46,4 +49,21 @@ pipeline {
             }
         }
   }
+
+  stage("Pack") {
+      steps{
+        script {
+          dockerImage = docker.build registry + ":$BUILD_NUMBER"
+        }
+      }
+  }
+ stage('Deploy Image') {
+      steps{
+         script {
+            docker.withRegistry( '', registryCredential ) {
+            dockerImage.push()
+          }
+        }
+      }
+    }
 }
