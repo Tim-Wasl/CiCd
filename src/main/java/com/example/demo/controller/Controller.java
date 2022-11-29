@@ -19,6 +19,6 @@ public class Controller {
 
     @GetMapping(path = "/test1")
     public String hello1() {
-        return "Hello1234";
+        return "Test";
     }
 }
