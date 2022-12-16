@@ -14,7 +14,7 @@ public class Controller {
 
     @GetMapping(path = "/test")
     public String hello() {
-        return "Hello";
+        return "Hello12";
     }
 
     @GetMapping(path = "/test1")
