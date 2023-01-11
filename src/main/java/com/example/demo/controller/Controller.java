@@ -21,4 +21,9 @@ public class Controller {
     public String hello1() {
         return "Test1";
     }
+
+    @GetMapping(path = "/test12")
+    public String hello12() {
+        return "Test12";
+    }
 }
