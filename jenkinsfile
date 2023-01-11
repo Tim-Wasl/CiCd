@@ -67,13 +67,9 @@ pipeline {
       }
  }
   stage('Update') {
-    steps{
        if (env.BRANCH_NAME == 'main' || env.BRANCH_NAME == 'develop') {
         build job: 'updatemanifest', parameters: [string (name: 'DOCKERTAG', value: env.BUILD_ID), string (name: 'BRANCH', value: env.BRANCH_NAME)]
-      } else {
-        bat "echo 'test'"
-      }
-    }
+      } 
     }
   }
 }
