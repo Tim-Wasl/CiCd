@@ -16,14 +16,4 @@ public class Controller {
     public String hello() {
         return "Hello12";
     }
-
-    @GetMapping(path = "/test1")
-    public String hello1() {
-        return "Test1";
-    }
-
-    @GetMapping(path = "/test12")
-    public String hello12() {
-        return "Test12";
-    }
 }
