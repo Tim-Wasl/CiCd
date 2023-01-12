@@ -13,7 +13,7 @@ pipeline {
   }
 
   stages {
-    stage('Checkstyle') {
+    stage('Build and Checkstyle') {
       steps {
         bat './gradlew build'
         recordIssues aggregatingResults: true, enabledForFailure: true, healthy: 5, unhealthy: 7,
@@ -66,7 +66,7 @@ pipeline {
       }
       }
  }
-  stage('updat manifest') {
+  stage('update manifest') {
     steps{
          script {
        if (env.BRANCH_NAME == 'main' || env.BRANCH_NAME == 'develop') {
